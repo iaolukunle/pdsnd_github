@@ -24,8 +24,10 @@ table(c$User.Type)
 table(w$User.Type)
 
 # ii. what are the counts of each gender
+
 # New York
 table(n$Gender)
+
 #Chicago
 table(c$Gender)
 
@@ -33,6 +35,7 @@ table(c$Gender)
 
 #New York
 table(n$Birth.Year)
+
 #Chicago
 table(c$Birth.Year)
 
@@ -57,6 +60,8 @@ ggplot(aes(x=Trip.Duration/60), data =n)+
    xlab('Number of Minutes Spent on Trip')+
    ylab('Number of Users')+
    ggtitle('Histogram of Trip Duration in New York')
+
+
 #Washington
 ggplot(aes(x=Trip.Duration/60), data =w)+
    geom_histogram(color='black', fill='red')+
@@ -64,6 +69,8 @@ ggplot(aes(x=Trip.Duration/60), data =w)+
    xlab('Number of Minutes Spent on Trip')+
    ylab('Number of Users')
    ggtitle('Histogram of Trip Duration in Washington')
+   
+   
 #Chicago
 ggplot(aes(x=Trip.Duration/60), data =c)+
    geom_histogram(color='black', fill='red')+
@@ -82,8 +89,11 @@ by(n$Trip.Duration/60, n$User.Type, summary)
 
 ## Washington
 by(w$Trip.Duration/60, w$User.Type, summary)
+
+
 ## Chicago
 by(c$Trip.Duration/60, c$User.Type, summary)
+
 
 #Histogram of Trip Duration By User Type
 #New York
@@ -94,6 +104,8 @@ ggplot(aes(x=Trip.Duration/60), data =subset(n, !is.na(User.Type)))+
    ylab('Number of Users')+
    ggtitle('Histogram of Trip Duration in New York by User Type')+
    facet_wrap(~User.Type)
+
+
 #Washington
 ggplot(aes(x=Trip.Duration/60), data =subset(w, !is.na(User.Type)))+
    geom_histogram(color='black', fill='red')+
@@ -102,6 +114,8 @@ ggplot(aes(x=Trip.Duration/60), data =subset(w, !is.na(User.Type)))+
    ylab('Number of Users')+
    ggtitle('Histogram of Trip Duration in Washington by User Type')+
    facet_wrap(~User.Type)
+
+
 #Chicago
 ggplot(aes(x=Trip.Duration/60), data =subset(c, !is.na(User.Type)))+
    geom_histogram(color='black', fill='red')+
@@ -118,6 +132,7 @@ qplot(x=User.Type, y=Trip.Duration/60, data = n, geom = 'boxplot')+
    ylab('Trip Duration in Minutes')+
    ggtitle('Distribution of Trip Duration among different users in New York')
 
+
 ## Washington
 by(w$Trip.Duration/60, w$User.Type, summary)
 qplot(x=User.Type, y=Trip.Duration/60, data = w, geom = 'boxplot')+
@@ -125,6 +140,7 @@ qplot(x=User.Type, y=Trip.Duration/60, data = w, geom = 'boxplot')+
    xlab('Type of User')+
    ylab('Trip Duration in Minutes')+
    ggtitle('Distribution of Trip Duration among different users in Washington')
+
 
 ## Chicago
 by(c$Trip.Duration/60, c$User.Type, summary)
@@ -158,6 +174,7 @@ ggplot(aes(y=Trip.Duration/60, x=Birth.Year), data = c)+
    ylab('Trip Duration')+
    ggtitle('Distribution of Trip Duration by year of birth in Chicago')
 
+
 # Trip Duration by Gender
 ##New York
 ggplot(aes(y=Trip.Duration/60, x=Gender), data = subset(n, !is.na(Gender)))+
@@ -166,6 +183,7 @@ ggplot(aes(y=Trip.Duration/60, x=Gender), data = subset(n, !is.na(Gender)))+
    xlab('Gender')+
    ylab('Trip Duration')+
    ggtitle('Distribution of Trip Duration by Gender in New York')
+
 
 by(n$Trip.Duration/60,n$Gender, summary) 
 
@@ -181,4 +199,30 @@ ggplot(aes(y=Trip.Duration/60, x=Gender), data = subset(c, !is.na(Gender)))+
 by(c$Trip.Duration/60,c$Gender, summary)
 
 
-system('python -m nbconvert Explore_bikeshare_data.ipynb')
+## More questions on Stations
+
+#What is the commonest Start station?
+
+# New York Start.Station
+table (n$Start.Station)
+
+
+#Washington Start.Station
+table(w$Start.Station)
+
+
+#chicago Start.Station
+table(c$Start.Station)
+
+
+# What is the commonest End Station?
+
+
+# New York End.Station
+table (n$End.Station)
+
+#Washington End.Station
+table(w$End.Station)
+
+#chicago End.Station
+table(c$End.Station)
