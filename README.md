@@ -11,7 +11,9 @@ This project explores the Bikeshare data from three different cities including:
 New York City, Washington and Chicago.
 
 ### Files used
-Include the files used
+Wahsington.csv
+Chicago.csv
+new_york_city.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
