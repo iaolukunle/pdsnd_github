@@ -199,4 +199,30 @@ ggplot(aes(y=Trip.Duration/60, x=Gender), data = subset(c, !is.na(Gender)))+
 by(c$Trip.Duration/60,c$Gender, summary)
 
 
+## More questions on Stations
 
+#What is the commonest Start station?
+
+# New York Start.Station
+table (n$Start.Station)
+
+
+#Washington Start.Station
+table(w$Start.Station)
+
+
+#chicago Start.Station
+table(c$Start.Station)
+
+
+# What is the commonest End Station?
+
+
+# New York End.Station
+table (n$End.Station)
+
+#Washington End.Station
+table(w$End.Station)
+
+#chicago End.Station
+table(c$End.Station)
