@@ -4,10 +4,11 @@
 Project Created 11th May, 2021. README Created 23rd May, 2021
 
 ### Project Title
-Explore Bikeshare Data 
+Explore Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+This project explores the Bikeshare data from three different cities including:
+New York City, Washington and Chicago.
 
 ### Files used
 Include the files used
